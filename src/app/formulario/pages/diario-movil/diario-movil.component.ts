@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { errorMensaje } from '../../../utils/sweet-alert';
-import { DataRadioButtonBoolean } from '../../../models/data-radiobutton-boolean.interface';
-import { DataRadioButton } from '../../../models/data-radiobutton.interface';
+import { DataRadioButtonBoolean } from '../../../models/data-radiobutton-boolean.model';
+import { DataRadioButton } from '../../../models/data-radiobutton.model';
+import { FormularioService } from '../../../services/formulario.service';
+import { map } from 'rxjs/operators';
+import { Instructor } from 'src/app/models/instructor.model';
+import { Movil } from 'src/app/models/movil.model';
+import { pascalCase, unCamelCase } from '../../../utils/string-utils';
 
 @Component({
   selector: 'app-diario-movil',
@@ -9,6 +14,7 @@ import { DataRadioButton } from '../../../models/data-radiobutton.interface';
   styleUrls: ['./diario-movil.component.scss'],
 })
 export class DiarioMovilComponent implements OnInit {
+  cargando = false;
   correct = 0;
   favoriteSeason: string;
   estadoLucesDelanteras: DataRadioButtonBoolean[] = [
@@ -40,22 +46,22 @@ export class DiarioMovilComponent implements OnInit {
   ];
 
   moviles: DataRadioButton[] = [
-    { key: 235, description: '235' },
-    { key: 236, description: '236' },
-    { key: 237, description: '237' },
-    { key: 238, description: '238' },
-    { key: 239, description: '239' },
-    { key: 240, description: '240' },
-    { key: 241, description: '241' },
-    { key: 242, description: '242' },
+    // { key: 235, description: '235' },
+    // { key: 236, description: '236' },
+    // { key: 237, description: '237' },
+    // { key: 238, description: '238' },
+    // { key: 239, description: '239' },
+    // { key: 240, description: '240' },
+    // { key: 241, description: '241' },
+    // { key: 242, description: '242' },
   ];
 
   instructores: DataRadioButton[] = [
-    { key: 'AR', description: 'Adrián Rodríguez' },
-    { key: 'AM', description: 'Adrián Machín' },
-    { key: 'GA', description: 'Gonzalo Andreatta' },
-    { key: 'JN', description: 'José Noble' },
-    { key: 'JM', description: 'Jorge Martínez' },
+    // { key: 'AR', description: 'Adrián Rodríguez' },
+    // { key: 'AM', description: 'Adrián Machín' },
+    // { key: 'GA', description: 'Gonzalo Andreatta' },
+    // { key: 'JN', description: 'José Noble' },
+    // { key: 'JM', description: 'Jorge Martínez' },
   ];
 
   dataEstadoLucesDelanteras: DataRadioButtonBoolean[] = [];
@@ -65,9 +71,21 @@ export class DiarioMovilComponent implements OnInit {
   movilSelected: DataRadioButton = null;
   instructorSelected: DataRadioButton = null;
 
-  constructor() {}
+  constructor(private formularioService: FormularioService) { }
 
-  ngOnInit(): void {}
+  async ngOnInit() {
+    this.cargando = true;
+    this.instructores = await this.formularioService.getInstructores()
+                                    .pipe(
+                                      map( instructores  => this.getColFromInstructor( instructores )   )
+                                      ).toPromise();
+
+    this.moviles = await this.formularioService.getMoviles()
+                                    .pipe(
+                                      map( moviles  => this.getColFromMovil( moviles )   )
+                                      ).toPromise();
+    this.cargando = false;
+  }
 
   getEstadoLucesDelanteras = (estadoLucesDelanteras: DataRadioButtonBoolean[])  => (this.dataEstadoLucesDelanteras = estadoLucesDelanteras);
 
@@ -78,6 +96,9 @@ export class DiarioMovilComponent implements OnInit {
   getMovilSelected = (movil: DataRadioButton)  => (this.movilSelected = movil);
 
   getInstructorSelected = (instructor: DataRadioButton)  => (this.instructorSelected = instructor);
+
+  getColFromInstructor = (col: Instructor[]) => ( col.map( item => new DataRadioButton( item.EscInsId, item.EscInsNom ) ));
+  getColFromMovil = (col:  Movil[]) => ( col.map( item => new DataRadioButton( item.MovCod, item.MovCod.toString())  ));
 
   enviarFormulario(event): void{
 

@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url_ws: 'http://192.1.0.86/ACUWSv15/rest',
 };
 
 /*

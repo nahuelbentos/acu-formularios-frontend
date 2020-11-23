@@ -3,7 +3,7 @@
         <mat-card-title> {{ title }} <strong *ngIf="required" class="requiredAsterisk"> * </strong>
         </mat-card-title>
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content class="margin-16">
 
         <mat-radio-group class="radio-group">
             <mat-radio-button class="radio-button" *ngFor="let item of data" (click)="updateItemSelected(item)" [value]="item">{{item.description}} </mat-radio-button>

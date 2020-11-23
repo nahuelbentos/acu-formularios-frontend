@@ -5,7 +5,7 @@ import { GestionCustomComponent } from './components/gestion-custom/gestion-cust
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from '../material/material.module';
-import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,6 +15,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { RadioBooleanCustomComponent } from './components/radio-boolean-custom/radio-boolean-custom.component';
 import { RadioGroupCustomComponent } from './components/radio-group-custom/radio-group-custom.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,16 @@ import { RadioGroupCustomComponent } from './components/radio-group-custom/radio
     HeaderComponent,
     RadioBooleanCustomComponent,
     RadioGroupCustomComponent,
+    SpinnerComponent,
   ],
-  exports: [HeaderComponent, FooterComponent, NavCustomComponent, RadioBooleanCustomComponent, RadioGroupCustomComponent],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    NavCustomComponent,
+    RadioBooleanCustomComponent,
+    RadioGroupCustomComponent,
+    SpinnerComponent,
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -38,7 +47,7 @@ import { RadioGroupCustomComponent } from './components/radio-group-custom/radio
     RouterModule,
 
     MaterialModule,
-    FormsModule
+    FormsModule,
   ],
 })
 export class SharedModule {}

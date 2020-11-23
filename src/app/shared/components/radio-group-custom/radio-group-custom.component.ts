@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { DataRadioButton } from '../../../models/data-radiobutton.interface';
+import { DataRadioButton } from '../../../models/data-radiobutton.model';
 
 @Component({
   selector: 'app-radio-group-custom',

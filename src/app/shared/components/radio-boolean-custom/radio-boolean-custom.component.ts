@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { DataRadioButtonBoolean } from '../../../models/data-radiobutton-boolean.interface';
+import { DataRadioButtonBoolean } from '../../../models/data-radiobutton-boolean.model';
 
 @Component({
   selector: 'app-radio-boolean-custom',
