@@ -1,1 +1,97 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+/*
+  Primary: #1976d2
+  Light-primary: #63a4ff
+  Dark-Primary: #004ba0
+
+  Secondary: #90caf9
+  Light-Secondary: #c3fdff
+  Dark-Secondary: #5d99c6
+
+  Text on P: #ffffff
+  Text on S: #e1f5fe
+
+*/
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.margin-abm {
+    margin: 20px 0px;
+}
+
+.checkbox-margin {
+    margin: 20px 12px 0 12px;
+}
+
+table {
+    width: 100%;
+}
+
+.tooltip-red {
+    background: #b71c1c;
+}
+
+.tooltip-blue {
+    background: #1976d2;
+}
+
+.button-eliminar {
+    background-color: #b71c1c !important;
+    color: white !important;
+}
+
+.button-editar {
+    background-color: #1976d2 !important;
+    color: white !important;
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.row {
+    width: 100%;
+}
+
+.requiredAsterisk {
+    color: #d93025;
+}
+
+.right-align {
+    text-align: right;
+}
+
+input.right-align::-webkit-outer-spin-button,
+input.right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.right-align {
+    -moz-appearance: textfield;
+}
+
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}

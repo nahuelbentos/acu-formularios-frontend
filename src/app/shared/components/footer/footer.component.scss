@@ -1,0 +1,41 @@
+@import "~@angular/material/theming";
+@include mat-core();
+$primary: mat-palette($mat-indigo);
+footer {
+    background-color: mat-color($primary);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    .box {
+        h3,
+        h4 {
+            color: white;
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+        input {
+            color: white;
+        }
+        ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            li {
+                margin: 10px 0px;
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.footer-row {
+    width: 100%;
+}
