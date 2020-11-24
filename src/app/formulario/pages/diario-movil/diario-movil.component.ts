@@ -3,10 +3,10 @@ import { errorMensaje } from '../../../utils/sweet-alert';
 import { DataRadioButtonBoolean } from '../../../models/data-radiobutton-boolean.model';
 import { DataRadioButton } from '../../../models/data-radiobutton.model';
 import { FormularioService } from '../../../services/formulario.service';
-import { map } from 'rxjs/operators';
+import { map, mergeMap } from 'rxjs/operators';
 import { Instructor } from 'src/app/models/instructor.model';
 import { Movil } from 'src/app/models/movil.model';
-import { pascalCase, unCamelCase } from '../../../utils/string-utils';
+import { Observable, from } from 'rxjs';
 
 @Component({
   selector: 'app-diario-movil',
@@ -71,52 +71,84 @@ export class DiarioMovilComponent implements OnInit {
   movilSelected: DataRadioButton = null;
   instructorSelected: DataRadioButton = null;
 
-  constructor(private formularioService: FormularioService) { }
+  constructor(private formularioService: FormularioService) {}
 
-  async ngOnInit() {
-    this.cargando = true;
-    this.instructores = await this.formularioService.getInstructores()
-                                    .pipe(
-                                      map( instructores  => this.getColFromInstructor( instructores )   )
-                                      ).toPromise();
+  // tslint:disable-next-line: typedef
+  ngOnInit() {
+    // from([
+    //   this.formularioService.getInstructores(),
+    //   this.formularioService.getMoviles(),
+    // ])
+    //   .pipe(
+    //     mergeMap((request) => {
+    //       console.log(request);
+    //       return request;
+    //     })
+    //   )
+    //   .subscribe((val) =>
+    //     val instanceof Instructor
+    //       ? (this.instructores = this.getColFromInstructor(val as Instructor[]))
+    //       : (this.moviles = this.getColFromMovil(val as Movil[]))
+    //   );
 
-    this.moviles = await this.formularioService.getMoviles()
-                                    .pipe(
-                                      map( moviles  => this.getColFromMovil( moviles )   )
-                                      ).toPromise();
-    this.cargando = false;
+    this.formularioService
+      .getInstructores()
+      .pipe(map((instructores) => this.getColFromInstructor(instructores)))
+      .subscribe((instructores) => (this.instructores = instructores));
+
+    this.formularioService
+      .getMoviles()
+      .pipe(map((moviles) => this.getColFromMovil(moviles)))
+      .subscribe((moviles) => (this.moviles = moviles));
   }
 
-  getEstadoLucesDelanteras = (estadoLucesDelanteras: DataRadioButtonBoolean[])  => (this.dataEstadoLucesDelanteras = estadoLucesDelanteras);
+  getEstadoLucesDelanteras = (
+    estadoLucesDelanteras: DataRadioButtonBoolean[]
+  ) => (this.dataEstadoLucesDelanteras = estadoLucesDelanteras);
 
-  getEstadoLucesTraceras = (estadoLucesTraceras: DataRadioButtonBoolean[])  => (this.dataEstadoLucesTraceras = estadoLucesTraceras);
+  getEstadoLucesTraceras = (estadoLucesTraceras: DataRadioButtonBoolean[]) =>
+    (this.dataEstadoLucesTraceras = estadoLucesTraceras);
 
-  getNivelesYObjetos = (nivelesYObjetos: DataRadioButtonBoolean[])  => (this.dataNivelesYObjetos = nivelesYObjetos);
+  getNivelesYObjetos = (nivelesYObjetos: DataRadioButtonBoolean[]) =>
+    (this.dataNivelesYObjetos = nivelesYObjetos);
 
-  getMovilSelected = (movil: DataRadioButton)  => (this.movilSelected = movil);
+  getMovilSelected = (movil: DataRadioButton) => (this.movilSelected = movil);
 
-  getInstructorSelected = (instructor: DataRadioButton)  => (this.instructorSelected = instructor);
+  getInstructorSelected = (instructor: DataRadioButton) =>
+    (this.instructorSelected = instructor);
 
-  getColFromInstructor = (col: Instructor[]) => ( col.map( item => new DataRadioButton( item.EscInsId, item.EscInsNom ) ));
-  getColFromMovil = (col:  Movil[]) => ( col.map( item => new DataRadioButton( item.MovCod, item.MovCod.toString())  ));
+  getColFromInstructor = (col: Instructor[]) =>
+    col.map((item) => new DataRadioButton(item.EscInsId, item.EscInsNom));
+  getColFromMovil = (col: Movil[]) =>
+    col.map((item) => new DataRadioButton(item.MovCod, item.MovCod.toString()));
 
-  enviarFormulario(event): void{
-
-    if (this.dataEstadoLucesDelanteras.find( item => item.value === null) || this.dataEstadoLucesDelanteras.length === 0){
-      errorMensaje('Error', 'Debe seleccionar todos los valores de estado de luces delanteras.');
+  enviarFormulario(event): void {
+    if (
+      this.dataEstadoLucesDelanteras.find((item) => item.value === null) ||
+      this.dataEstadoLucesDelanteras.length === 0
+    ) {
+      errorMensaje(
+        'Error',
+        'Debe seleccionar todos los valores de estado de luces delanteras.'
+      );
     }
 
-    if (this.dataEstadoLucesTraceras.find( item => item.value === null) || this.dataEstadoLucesTraceras.length === 0){
-      errorMensaje('Error', 'Debe seleccionar todos los valores de estado de luces traceras.');
+    if (
+      this.dataEstadoLucesTraceras.find((item) => item.value === null) ||
+      this.dataEstadoLucesTraceras.length === 0
+    ) {
+      errorMensaje(
+        'Error',
+        'Debe seleccionar todos los valores de estado de luces traceras.'
+      );
     }
 
-    if (this.movilSelected === null){
+    if (this.movilSelected === null) {
       errorMensaje('Error', 'Debe seleccionar un móvil.');
     }
 
-    if (this.instructorSelected === null){
+    if (this.instructorSelected === null) {
       errorMensaje('Error', 'Debe seleccionar su nombre.');
     }
-
   }
 }

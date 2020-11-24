@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~10.0.2",
+    "@angular/animations": "^10.0.14",
     "@angular/cdk": "^10.2.7",
     "@angular/common": "~10.0.2",
     "@angular/compiler": "~10.0.2",
@@ -22,6 +22,9 @@
     "@angular/platform-browser-dynamic": "~10.0.2",
     "@angular/router": "~10.0.2",
     "@sweetalert2/ngx-sweetalert2": "^8.1.1",
+    "alertifyjs": "^1.13.1",
+    "ng-block-ui": "^3.0.2",
+    "ngx-toastr": "^13.1.0",
     "rxjs": "~6.5.5",
     "sweetalert2": "^10.10.1",
     "tslib": "^2.0.0",

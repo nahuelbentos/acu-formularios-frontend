@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { RadioBooleanCustomComponent } from './components/radio-boolean-custom/radio-boolean-custom.component';
 import { RadioGroupCustomComponent } from './components/radio-group-custom/radio-group-custom.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { BlockUIModule } from 'ng-block-ui';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,11 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 
     MaterialModule,
     FormsModule,
+    BlockUIModule.forRoot({
+      delayStart: 1000,
+      delayStop: 1000,
+      message: 'Cargando',
+    }),
   ],
 })
 export class SharedModule {}
