@@ -9,6 +9,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CargandoInterceptor } from './interceptors/cargando.interceptor';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],

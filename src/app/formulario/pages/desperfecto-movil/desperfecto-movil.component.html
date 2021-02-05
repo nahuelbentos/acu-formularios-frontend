@@ -28,7 +28,7 @@
             </mat-card>
 
             <br>
-            <form>
+            <form [formGroup]="form">
 
                 <app-radio-group-custom [data]="moviles" (getItemSelected)="getMovilSelected($event)" title="Por favor, selecciona el número de móvil" required="true">
                 </app-radio-group-custom>
@@ -49,8 +49,12 @@
                             <div class="box">
                                 <mat-form-field class="margin-16">
                                     <mat-label>Kilometraje</mat-label>
-                                    <input matInput type="number" class="right-align">
+                                    <input matInput type="number" class="right-align" formControlName="movilKilometraje">
                                     <span matSuffix>&nbsp;kms.</span>
+
+                                    <mat-error *ngIf="movilKilometraje.hasError('required')">
+                                        El kilometraje es <strong>requerido</strong>.
+                                    </mat-error>
                                 </mat-form-field>
 
                             </div>
@@ -71,7 +75,11 @@
 
                                 <mat-form-field class="margin-16  ">
                                     <mat-label>Tu respuesta</mat-label>
-                                    <input matInput>
+                                    <input matInput formControlName="desperfecto">
+
+                                    <mat-error *ngIf="desperfecto.hasError('required')">
+                                        El desperfecto es <strong>requerido</strong>.
+                                    </mat-error>
                                 </mat-form-field>
 
                             </div>
@@ -87,7 +95,7 @@
                 <mat-card-actions align="center">
 
 
-                    <button mat-raised-button color="primary" type="button" (click)="enviarFormulario($event)" class="block">Enviar </button>
+                    <button mat-raised-button color="primary" type="button" [disabled]="form.invalid" (click)="enviarFormulario($event)" class="block">Enviar </button>
                 </mat-card-actions>
             </form>
 

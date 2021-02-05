@@ -45,24 +45,9 @@ export class DiarioMovilComponent implements OnInit {
     { description: 'Combustible (al menos medio tanque)', value: null },
   ];
 
-  moviles: DataRadioButton[] = [
-    // { key: 235, description: '235' },
-    // { key: 236, description: '236' },
-    // { key: 237, description: '237' },
-    // { key: 238, description: '238' },
-    // { key: 239, description: '239' },
-    // { key: 240, description: '240' },
-    // { key: 241, description: '241' },
-    // { key: 242, description: '242' },
-  ];
+  moviles: DataRadioButton[] = [ ];
 
-  instructores: DataRadioButton[] = [
-    // { key: 'AR', description: 'Adrián Rodríguez' },
-    // { key: 'AM', description: 'Adrián Machín' },
-    // { key: 'GA', description: 'Gonzalo Andreatta' },
-    // { key: 'JN', description: 'José Noble' },
-    // { key: 'JM', description: 'Jorge Martínez' },
-  ];
+  instructores: DataRadioButton[] = [ ];
 
   dataEstadoLucesDelanteras: DataRadioButtonBoolean[] = [];
   dataEstadoLucesTraceras: DataRadioButtonBoolean[] = [];
@@ -75,21 +60,6 @@ export class DiarioMovilComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
-    // from([
-    //   this.formularioService.getInstructores(),
-    //   this.formularioService.getMoviles(),
-    // ])
-    //   .pipe(
-    //     mergeMap((request) => {
-    //       console.log(request);
-    //       return request;
-    //     })
-    //   )
-    //   .subscribe((val) =>
-    //     val instanceof Instructor
-    //       ? (this.instructores = this.getColFromInstructor(val as Instructor[]))
-    //       : (this.moviles = this.getColFromMovil(val as Movil[]))
-    //   );
 
     this.formularioService
       .getInstructores()

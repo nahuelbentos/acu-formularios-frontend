@@ -8,6 +8,7 @@ import { DiarioMovilComponent } from './pages/diario-movil/diario-movil.componen
 import { DesperfectoMovilComponent } from './pages/desperfecto-movil/desperfecto-movil.component';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -15,8 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormularioRoutingModule,
-    FormsModule,
     ReactiveFormsModule,
+    RouterModule,
     SharedModule,
     MaterialModule
   ]

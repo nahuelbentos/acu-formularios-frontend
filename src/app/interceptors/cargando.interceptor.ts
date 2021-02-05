@@ -40,11 +40,9 @@ export class CargandoInterceptor implements HttpInterceptor {
           console.log('event:: ', event);
 
           if (event.status !== 200) {
-            this.toast.error('La cagaste!', 'Not Toastr fun!', {
+            this.toast.error('Ocurrió un error', 'Comunicate con informática', {
               timeOut: 3000,
             });
-          } else {
-            this.toast.success('tremendo!', 'Toastr fun!');
           }
         }
         return event;

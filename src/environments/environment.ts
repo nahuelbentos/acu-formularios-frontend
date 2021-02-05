@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   url_ws: 'http://192.1.0.86/ACUWSv15/rest',
+  url_backend: 'http://localhost:5000/api',
 };
 
 /*
