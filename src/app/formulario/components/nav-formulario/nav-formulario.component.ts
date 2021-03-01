@@ -18,6 +18,10 @@ export class NavFormularioComponent implements OnInit {
       link: 'desperfecto-movil',
       titulo: 'Desperfecto Móvil',
     },
+    {
+      link: 'evaluacion-alumno',
+      titulo: 'Evaluación Alumno',
+    },
   ];
   constructor() { }
 

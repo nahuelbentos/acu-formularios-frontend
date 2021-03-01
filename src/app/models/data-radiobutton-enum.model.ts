@@ -1,7 +1,7 @@
-export class DataRadioButtonBoolean {
+export class DataRadioButtonEnum {
   constructor(
     public description: string,
-    public value: boolean,
+    public value: number,
     public key: string,
 
   ){}

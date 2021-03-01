@@ -17,6 +17,7 @@ import { RadioBooleanCustomComponent } from './components/radio-boolean-custom/r
 import { RadioGroupCustomComponent } from './components/radio-group-custom/radio-group-custom.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { BlockUIModule } from 'ng-block-ui';
+import { RadioEnumCustomComponent } from './components/radio-enum-custom/radio-enum-custom.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { BlockUIModule } from 'ng-block-ui';
     RadioBooleanCustomComponent,
     RadioGroupCustomComponent,
     SpinnerComponent,
+    RadioEnumCustomComponent,
   ],
   exports: [
     HeaderComponent,
@@ -35,6 +37,7 @@ import { BlockUIModule } from 'ng-block-ui';
     RadioBooleanCustomComponent,
     RadioGroupCustomComponent,
     SpinnerComponent,
+    RadioEnumCustomComponent,
   ],
   imports: [
     CommonModule,

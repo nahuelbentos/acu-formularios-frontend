@@ -1,0 +1,31 @@
+<mat-card class="margin-abm">
+    <mat-card-header>
+        <mat-card-title> {{ title }} <strong *ngIf="required" class="requiredAsterisk"> * </strong>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="margin-16">
+
+        <div class="row">
+            <div [ngClass]="{'col-xs-6': valuesEnum.length < 4, 'col-xs-4': valuesEnum.length >= 4}"></div>
+            <div class="col-xs-2 center-xs" *ngFor="let title of titleOptions">
+                <h5> {{ title }} </h5>
+            </div>
+        </div>
+        <mat-radio-group *ngFor="let item of data" [(ngModel)]="item.value">
+            <div class="row row-radio-buton">
+                <!-- class="col-xs-4" -->
+                <div [ngClass]="{'col-xs-6': valuesEnum.length < 4, 'col-xs-4': valuesEnum.length >= 4}">
+                    <label id="example-radio-group-label">  {{item.description}} </label>
+
+                </div>
+                <div class="col-xs-2 center-xs" *ngFor="let value of valuesEnum" (click)="updateData()">
+
+                    <mat-radio-button [value]="value"></mat-radio-button>
+
+                </div>
+            </div>
+        </mat-radio-group>
+
+
+    </mat-card-content>
+</mat-card>

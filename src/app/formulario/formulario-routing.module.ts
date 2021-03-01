@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NavFormularioComponent } from './components/nav-formulario/nav-formulario.component';
 import { DiarioMovilComponent } from './pages/diario-movil/diario-movil.component';
 import { DesperfectoMovilComponent } from './pages/desperfecto-movil/desperfecto-movil.component';
+import { EvaluacionAlumnoComponent } from './pages/evaluacion-alumno/evaluacion-alumno.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,11 @@ const routes: Routes = [
         path: 'desperfecto-movil',
         component: DesperfectoMovilComponent,
         data: { titulo: 'Reporte de Desperfectos de Móviles' },
+      },
+      {
+        path: 'evaluacion-alumno',
+        component: EvaluacionAlumnoComponent,
+        data: { titulo: 'Evaluación del Alumno' },
       },
 
 

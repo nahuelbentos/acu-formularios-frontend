@@ -9,10 +9,11 @@ import { DesperfectoMovilComponent } from './pages/desperfecto-movil/desperfecto
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { EvaluacionAlumnoComponent } from './pages/evaluacion-alumno/evaluacion-alumno.component';
 
 
 @NgModule({
-  declarations: [NavFormularioComponent, DiarioMovilComponent, DesperfectoMovilComponent],
+  declarations: [NavFormularioComponent, DiarioMovilComponent, DesperfectoMovilComponent, EvaluacionAlumnoComponent],
   imports: [
     CommonModule,
     FormularioRoutingModule,
