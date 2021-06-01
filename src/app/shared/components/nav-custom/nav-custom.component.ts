@@ -31,7 +31,7 @@ export class NavCustomComponent implements OnInit, OnDestroy {
 
     this.tituloSubs$ = this.getDataRuta().subscribe((data) => {
       this.titulo = data.titulo;
-      document.title = `Acu Formularios - ${data.titulo}`;
+      document.title = `Acu Reportes - ${data.titulo}`;
     });
   }
 

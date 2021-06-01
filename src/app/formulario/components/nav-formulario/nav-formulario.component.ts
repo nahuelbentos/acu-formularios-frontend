@@ -8,7 +8,7 @@ import { RutasNav } from 'src/app/models/rutas-nav.interface';
 })
 export class NavFormularioComponent implements OnInit {
 
-   rol = 'formularios';
+   rol = 'reportes';
   routes: RutasNav[] = [
     {
       link: 'diario-movil',

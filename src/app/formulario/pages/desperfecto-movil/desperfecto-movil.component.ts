@@ -85,7 +85,7 @@ export class DesperfectoMovilComponent implements OnInit {
     desperfectoMovil.desperfecto = this.desperfecto.value;
 
     this.formularioService.guardarDesperfectoMovil( desperfectoMovil )
-      .subscribe( () => mensajeConfirmacion("Excelente!", "Se envió el formulario correctamente")
+      .subscribe( () => mensajeConfirmacion("Excelente!", "Se envió el reporte correctamente")
         .then( () => this.router.navigate(['/formulario']) ))
 
 

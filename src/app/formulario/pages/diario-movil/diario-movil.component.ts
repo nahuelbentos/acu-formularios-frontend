@@ -123,7 +123,7 @@ export class DiarioMovilComponent implements OnInit {
 
 
     this.formularioService.guardarDiarioMovil( diarioMovil )
-      .subscribe( () => mensajeConfirmacion("Excelente!", "Se envió el formulario correctamente")
+      .subscribe( () => mensajeConfirmacion("Excelente!", "Se envió el reporte correctamente")
         .then( () => this.router.navigate(['/formulario']) ))
   }
 

@@ -169,11 +169,10 @@ export class EvaluacionAlumnoComponent implements OnInit {
     this.validarFormulario();
 
     const evaluacionAlumno = this.getEvaluacionAlumno();
-    console.log('evaluacionAlumno:: ', evaluacionAlumno);
 
 
     this.formularioService.guardarEvaluacionAlumno( evaluacionAlumno )
-      .subscribe( () => mensajeConfirmacion("Excelente!", "Se envió el formulario correctamente")
+      .subscribe( () => mensajeConfirmacion("Excelente!", "Se envió el reporte correctamente")
         .then( () => this.router.navigate(['/formulario']) ))
 
   }
@@ -183,7 +182,10 @@ export class EvaluacionAlumnoComponent implements OnInit {
 
     const evaluacionAlumno = new EvaluacionAlumno();
     evaluacionAlumno.escInsId = this.instructorSelected.key.toString() ;
+    evaluacionAlumno.alumnoNombreApellido = this.alumnoNombreApellido.value;
     evaluacionAlumno.observaciones = this.observaciones.value;
+    evaluacionAlumno.numeroClase = parseInt(this.numeroClaseSelected.key.toString()) ;
+
 
     this.dataProgresoAlumno.forEach( item => {
 

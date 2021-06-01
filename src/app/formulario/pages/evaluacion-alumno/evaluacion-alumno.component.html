@@ -63,7 +63,7 @@
                 </mat-card>
 
 
-                <app-radio-group-custom title="Por favor indica el número de clase" required="true" [data]="numeroClases" (getData)="getNumeroClaseSelected($event)">
+                <app-radio-group-custom title="Por favor indica el número de clase" required="true" [data]="numeroClases" (getItemSelected)="getNumeroClaseSelected($event)">
                 </app-radio-group-custom>
 
                 <app-radio-enum-custom title="Por favor, indica el progreso del alumno" required="true" [titleOptions]="titlesProgresoAlumno" [valuesEnum]="valuesEnum" [data]="dataProgresoAlumno" (getData)="getProgresoAlumno($event)">
