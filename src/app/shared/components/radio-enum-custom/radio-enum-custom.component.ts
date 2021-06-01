@@ -15,13 +15,13 @@ export class RadioEnumCustomComponent implements OnInit {
   @Input() titleOptions: string[];
   @Input() required: boolean;
 
-  @Output() getData: EventEmitter<DataRadioButtonEnum[]> = new EventEmitter();
+  @Output() getData: EventEmitter<DataRadioButtonEnum[] | DataRadioButtonEnum> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  updateData = ()  => (this.getData.emit( this.data )) ;
+  updateData = ( value: number )  =>  (this.getData.emit(  this.data.length > 1 ? this.data : { ...this.data[0], value } ));
 
 }

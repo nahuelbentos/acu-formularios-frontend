@@ -10,10 +10,11 @@ import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { EvaluacionAlumnoComponent } from './pages/evaluacion-alumno/evaluacion-alumno.component';
+import { ResultadoExamenPracticoComponent } from './pages/resultado-examen-practico/resultado-examen-practico.component';
 
 
 @NgModule({
-  declarations: [NavFormularioComponent, DiarioMovilComponent, DesperfectoMovilComponent, EvaluacionAlumnoComponent],
+  declarations: [NavFormularioComponent, DiarioMovilComponent, DesperfectoMovilComponent, EvaluacionAlumnoComponent, ResultadoExamenPracticoComponent],
   imports: [
     CommonModule,
     FormularioRoutingModule,
