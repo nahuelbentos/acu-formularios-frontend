@@ -22,6 +22,10 @@ export class NavFormularioComponent implements OnInit {
       link: 'evaluacion-alumno',
       titulo: 'Evaluación Alumno',
     },
+    {
+      link: 'resultado-examen-practico',
+      titulo: 'Resultado de Exámenes Prácticos',
+    },
   ];
   constructor() { }
 

@@ -10,6 +10,7 @@ export class RadioBooleanCustomComponent implements OnInit {
 
   @Input() data: DataRadioButtonBoolean[];
   @Input() title: string;
+  @Input() showDescription: boolean = true;
   @Input() titleRight: string;
   @Input() titleWrong: string;
   @Input() required: boolean;

@@ -43,7 +43,7 @@ export class EvaluacionAlumnoComponent implements OnInit {
   ];
 
   dataSeguridadInciarMarcha: DataRadioButtonEnum[] = [
-    { description: 'Regula correctamente la butaca y apoyacabezas', value: null, key: 'seguridadCinturon'  },
+    { description: 'Regula correctamente la butaca y apoyacabezas', value: null, key: 'seguridadCinturon', hasMargin: true  },
     { description: 'Usa cinturón de seguridad', value: null, key: 'seguridadRegulaButacaApoyaCabezas'  },
     { description: 'Regula los 3 espejos', value: null, key: 'seguridadRegulaEspejos'  },
   ];
@@ -54,7 +54,7 @@ export class EvaluacionAlumnoComponent implements OnInit {
     { description: 'Domina el uso de los 3 espejos', value: null, key: 'dominaUsoEspejos'  },
     { description: 'Tiene buena técnica de brazos', value: null, key: 'tieneBuenaTecnicaBrazos'  },
     { description: 'Domina el vehículo en repecho', value: null, key: 'dominaVehiculoEnRepecho'  },
-    { description: 'Señaliza correctamente el cambio de carril', value: null, key: 'senializaCorrectamenteCambioCarril'  },
+    { description: 'Señaliza correctamente el cambio de carril', value: null, key: 'senializaCorrectamenteCambioCarril', hasMargin: true  },
   ];
 
   dataPrudenciaAlumno: DataRadioButtonEnum[] = [
@@ -64,13 +64,13 @@ export class EvaluacionAlumnoComponent implements OnInit {
     { description: 'Respeta todas las señales de tránsito', value: null, key: 'respetaTodasSenialesTransito'  },
     { description: 'Señaliza las maniobras a realizar', value: null, key: 'senializaManiobrasARealizar'  },
     { description: 'Respeta las sendas peatonales', value: null, key: 'respetaSendasPeatonales'  },
-    { description: 'Respeta los derechos de otros usuarios de la vía', value: null, key: 'respetaOtrosUsuariosDeLaVia'  },
+    { description: 'Respeta los derechos de otros usuarios de la via', value: null, key: 'respetaOtrosUsuariosDeLaVia', hasMargin: true  },
     { description: 'Mantiene una velocidad adecuada', value: null, key: 'mantieneVelocidadAdecuada'  },
     { description: 'Frena con suficiente anticipación', value: null, key: 'frenaConSuficienteAnticipacion'  },
   ];
 
   dataGiros: DataRadioButtonEnum[] = [
-    { description: 'Se ubica correctamente para realizarlo', value: null, key: 'giroUbicacionCorrectamente'  },
+    { description: 'Se ubica correctamente para realizarlo', value: null, key: 'giroUbicacionCorrectamente', hasMargin: true  },
     { description: 'Señaliza correctamente', value: null, key: 'giroSenializaCorrectamente'  },
     { description: 'Ingresa correctamente a la nueva vía', value: null, key: 'giroIngresaCorrectamenteNuevaVia'  },
     { description: 'Los realiza a la velocidad correcta', value: null, key: 'giroVelocidadCorrecta'  },
@@ -82,7 +82,7 @@ export class EvaluacionAlumnoComponent implements OnInit {
   ];
 
   dataComportamientoAlumno: DataRadioButtonEnum[] = [
-    { description: 'Evalúa y enfrenta adecuadamente las dificultades', value: null, key: 'evaluaEnfrentaAdecuadamenteDificultades'  },
+    { description: 'Evalúa y enfrenta adecuadamente las dificultades', value: null, key: 'evaluaEnfrentaAdecuadamenteDificultades', hasMargin: true  },
     { description: 'Tolerancia al stress en el tránsito', value: null, key: 'toleranciaStressTransito'  },
     { description: 'Acepta las indicaciones del instructor', value: null, key: 'aceptaIndicacionesInstructor'  },
   ];
@@ -90,10 +90,10 @@ export class EvaluacionAlumnoComponent implements OnInit {
   dataManiobras: DataRadioButtonEnum[] = [
     { description: 'Marcha atrás', value: null, key: 'marchaAtras'  },
     { description: 'Slalom', value: null, key: 'slalom'  },
-    { description: 'Estacionamiento lateral derecho', value: null, key: 'estacionamientoLateralDerecho'  },
-    { description: 'Estacionamiento lateral izquierdo', value: null, key: 'estacionamientoLateralIzquierdo'  },
-    { description: 'Estacionamiento en 45° derecho', value: null, key: 'estacionamient45GradosDerecho'  },
-    { description: 'Estacionamiento en 45° izquierdo', value: null, key: 'estacionamient45GradosIzquierdo'  },
+    { description: 'Estac. lateral derecho', value: null, key: 'estacionamientoLateralDerecho'  },
+    { description: 'Estac. lateral izquierdo', value: null, key: 'estacionamientoLateralIzquierdo'  },
+    { description: 'Estac. en 45° derecho', value: null, key: 'estacionamient45GradosDerecho'  },
+    { description: 'Estac. en 45° izquierdo', value: null, key: 'estacionamient45GradosIzquierdo'  },
   ];
 
 

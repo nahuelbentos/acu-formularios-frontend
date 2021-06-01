@@ -5,8 +5,9 @@
     </mat-card-header>
     <mat-card-content class="margin-16">
 
+
         <div class="row">
-            <div class="col-xs-6"></div>
+            <div class="col-xs-6" *ngIf="showDescription === true" ></div>
             <div class="col-xs-3 center-xs">
                 <h5> {{ titleRight }} </h5>
             </div>
@@ -16,7 +17,7 @@
         </div>
         <mat-radio-group *ngFor="let item of data" [(ngModel)]="item.value">
             <div class="row row-radio-buton">
-                <div class="col-xs-6">
+                <div class="col-xs-6" *ngIf="showDescription === true" >
                     <label id="example-radio-group-label">  {{item.description}} </label>
 
                 </div>

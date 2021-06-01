@@ -12,13 +12,13 @@
             </div>
         </div>
         <mat-radio-group *ngFor="let item of data" [(ngModel)]="item.value">
-            <div class="row row-radio-buton">
+            <div class="row row-radio-buton" [ngStyle]="{'margin-bottom': item.hasMargin ? '15px' : '0px'}" >
                 <!-- class="col-xs-4" -->
                 <div [ngClass]="{'col-xs-6': valuesEnum.length < 4, 'col-xs-4': valuesEnum.length >= 4}">
                     <label id="example-radio-group-label">  {{item.description}} </label>
 
                 </div>
-                <div class="col-xs-2 center-xs" *ngFor="let value of valuesEnum" (click)="updateData()">
+                <div class="col-xs-2 center-xs" *ngFor="let value of valuesEnum" (click)="updateData(value)">
 
                     <mat-radio-button [value]="value"></mat-radio-button>
 

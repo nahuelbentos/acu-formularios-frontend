@@ -94,8 +94,8 @@ export class DesperfectoMovilComponent implements OnInit {
 
 
   getColFromInstructor = (col: Instructor[]) =>
-    col.map((item) => new DataRadioButton(item.EscInsId, item.EscInsNom));
+    col.map(({EscInsId, EscInsNom}) => new DataRadioButton(EscInsId, EscInsNom));
   getColFromMovil = (col: Movil[]) =>
-    col.map((item) => new DataRadioButton(item.MovCod, item.MovCod.toString()));
+    col.map(({MovCod}) => new DataRadioButton(MovCod, MovCod.toString()));
 
 }
