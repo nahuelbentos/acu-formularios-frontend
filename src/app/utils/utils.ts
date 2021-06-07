@@ -1,9 +1,9 @@
-import { Instructor } from '../models/instructor.model';
-import { DataRadioButton } from '../models/data-radiobutton.model';
-import { Movil } from '../models/movil.model';
-import { DataRadioButtonBoolean } from '../models/data-radiobutton-boolean.model';
+import { Instructor } from '../models/classes/instructor.model';
+import { DataRadioButton } from '../models/classes/data-radiobutton.model';
+import { Movil } from '../models/classes/movil.model';
+import { DataRadioButtonBoolean } from '../models/classes/data-radiobutton-boolean.model';
 import { errorMensaje } from './sweet-alert';
-import { DataRadioButtonEnum } from '../models/data-radiobutton-enum.model';
+import { DataRadioButtonEnum } from '../models/classes/data-radiobutton-enum.model';
 
 export const getMotivosReprobacionPista = () => [
   'Marcha atrás',
@@ -38,6 +38,14 @@ export const validarColeccion = (coleccion: any[], mensaje: string) => {
     errorMensaje('Error', mensaje);
     return;
   }
+};
+
+export const validarItem = (item: any, mensaje: string) => {
+  if( !(item || item?.value) ) {
+    errorMensaje('Error', mensaje)
+    return true;
+  }
+  return false;
 };
 
 export const stringIsNumber = (value) => isNaN(Number(value)) === false;

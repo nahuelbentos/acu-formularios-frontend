@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { errorMensaje, mensajeConfirmacion } from '../../../utils/sweet-alert';
-import { DataRadioButtonBoolean } from '../../../models/data-radiobutton-boolean.model';
-import { DataRadioButton } from '../../../models/data-radiobutton.model';
+import { DataRadioButtonBoolean } from '../../../models/classes/data-radiobutton-boolean.model';
+import { DataRadioButton } from '../../../models/classes/data-radiobutton.model';
 import { FormularioService } from '../../../services/formulario.service';
-import { map, mergeMap } from 'rxjs/operators';
-import { Instructor } from 'src/app/models/instructor.model';
-import { Movil } from 'src/app/models/movil.model';
-import { Observable, from } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { DiarioMovil } from '../../../models/diario-movil.model';
+import { DiarioMovil } from '../../../models/classes/diario-movil.model';
 import { getColFromInstructor, getColFromMovil, validarColeccion } from '../../../utils/utils';
 
 @Component({

@@ -11,9 +11,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Columna } from 'src/app/models/columna.interface';
-import { EliminarRow } from 'src/app/models/eliminiar-row.interface';
-import { confirmacionUsuario } from 'src/app/utils/sweet-alert';
+import { EliminarRow } from '../../../models/interfaces/eliminiar-row.interface';
+import { confirmacionUsuario } from '../../../utils/sweet-alert';
 
 @Component({
   selector: 'app-gestion-custom',

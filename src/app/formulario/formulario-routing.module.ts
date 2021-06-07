@@ -4,7 +4,6 @@ import { NavFormularioComponent } from './components/nav-formulario/nav-formular
 import { DiarioMovilComponent } from './pages/diario-movil/diario-movil.component';
 import { DesperfectoMovilComponent } from './pages/desperfecto-movil/desperfecto-movil.component';
 import { EvaluacionAlumnoComponent } from './pages/evaluacion-alumno/evaluacion-alumno.component';
-import { ResultadoExamenPractico } from '../models/resultado-examen-practico.model';
 import { ResultadoExamenPracticoComponent } from './pages/resultado-examen-practico/resultado-examen-practico.component';
 
 

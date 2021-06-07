@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RutasNav } from 'src/app/models/rutas-nav.interface';
+import { RutasNav } from '../../../models/interfaces/rutas-nav.interface';
 
 @Component({
   selector: 'app-nav-formulario',
@@ -24,7 +24,7 @@ export class NavFormularioComponent implements OnInit {
     },
     {
       link: 'resultado-examen-practico',
-      titulo: 'Resultado de Exámenes Prácticos',
+      titulo: 'Resultado de Exámenes Práctico',
     },
   ];
   constructor() { }

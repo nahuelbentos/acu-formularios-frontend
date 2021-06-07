@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { DataRadioButton } from 'src/app/models/data-radiobutton.model';
-import { errorMensaje } from 'src/app/utils/sweet-alert';
 import { FormularioService } from '../../../services/formulario.service';
 import { map } from 'rxjs/operators';
-import { Instructor } from 'src/app/models/instructor.model';
-import { Movil } from 'src/app/models/movil.model';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DesperfectoMovil } from '../../../models/desperfecto-movil.model';
-import { mensajeConfirmacion } from '../../../utils/sweet-alert';
+import { DesperfectoMovil } from '../../../models/classes/desperfecto-movil.model';
+import { mensajeConfirmacion, errorMensaje } from '../../../utils/sweet-alert';
 import { Router } from '@angular/router';
+import { DataRadioButton } from '../../../models/classes/data-radiobutton.model';
+import { getColFromInstructor, getColFromMovil } from '../../../utils/utils';
 
 @Component({
   selector: 'app-desperfecto-movil',
@@ -53,12 +51,12 @@ export class DesperfectoMovilComponent implements OnInit {
   ngOnInit(): void {
     this.formularioService
       .getInstructores()
-      .pipe(map((instructores) => this.getColFromInstructor(instructores)))
+      .pipe(map((instructores) => getColFromInstructor(instructores)))
       .subscribe((instructores) => (this.instructores = instructores));
 
     this.formularioService
       .getMoviles()
-      .pipe(map((moviles) => this.getColFromMovil(moviles)))
+      .pipe(map((moviles) => getColFromMovil(moviles)))
       .subscribe((moviles) => (this.moviles = moviles));
   }
 
@@ -92,10 +90,5 @@ export class DesperfectoMovilComponent implements OnInit {
 
   }
 
-
-  getColFromInstructor = (col: Instructor[]) =>
-    col.map(({EscInsId, EscInsNom}) => new DataRadioButton(EscInsId, EscInsNom));
-  getColFromMovil = (col: Movil[]) =>
-    col.map(({MovCod}) => new DataRadioButton(MovCod, MovCod.toString()));
 
 }

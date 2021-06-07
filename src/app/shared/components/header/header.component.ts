@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { UsuarioSesion } from '../../../models/usuario-sesion.model';
 
 @Component({
   selector: 'app-header',

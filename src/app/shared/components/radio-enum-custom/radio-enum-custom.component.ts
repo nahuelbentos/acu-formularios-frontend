@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { DataRadioButtonEnum } from '../../../models/data-radiobutton-enum.model';
+import { DataRadioButtonEnum } from '../../../models/classes/data-radiobutton-enum.model';
 
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { DataRadioButtonBoolean } from '../../../models/data-radiobutton-boolean.model';
+import { DataRadioButtonBoolean } from '../../../models/classes/data-radiobutton-boolean.model';
 
 @Component({
   selector: 'app-radio-boolean-custom',
@@ -15,14 +15,14 @@ export class RadioBooleanCustomComponent implements OnInit {
   @Input() titleWrong: string;
   @Input() required: boolean;
 
-  @Output() getData: EventEmitter<DataRadioButtonBoolean[]> = new EventEmitter();
+  @Output() getData: EventEmitter<DataRadioButtonBoolean[] | DataRadioButtonBoolean> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  updateData = ()  => (this.getData.emit( this.data )) ;
+  updateData = ( value: boolean )  =>  (this.getData.emit(  this.data.length > 1 ? this.data : { ...this.data[0], value } ));
 
 
 }

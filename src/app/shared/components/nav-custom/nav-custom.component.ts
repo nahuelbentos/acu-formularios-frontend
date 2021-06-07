@@ -2,8 +2,8 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, Subscription } from 'rxjs';
 import { filter, map, shareReplay } from 'rxjs/operators';
-import { RutasNav } from 'src/app/models/rutas-nav.interface';
 import { ActivationEnd, Router } from '@angular/router';
+import { RutasNav } from '../../../models/interfaces/rutas-nav.interface';
 
 @Component({
   selector: 'app-nav-custom',

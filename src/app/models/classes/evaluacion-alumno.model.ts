@@ -1,6 +1,6 @@
-import { ProgresoInicial } from './progreso-inicial.enum';
-import { ProgresoAlumno } from './progreso-alumno.enum';
-import { ProgresoManiobras } from './progreso-maniobras.enum';
+import { ProgresoInicial } from '../enums/progreso-inicial.enum';
+import { ProgresoAlumno } from '../enums/progreso-alumno.enum';
+import { ProgresoManiobras } from '../enums/progreso-maniobras.enum';
 
 export class EvaluacionAlumno{
   constructor(
